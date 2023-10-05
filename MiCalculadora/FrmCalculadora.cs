@@ -69,43 +69,31 @@ namespace MiCalculadora
 
         private void rdbDecimal_CheckedChanged(object sender, EventArgs e)
         {
-            foreach(Control control in  cmbOperacion.Controls)
+            if (resultado != null) 
             {
-                if (control is RadioButton && ((RadioButton)control).Checked)
-                {
-                    if(control.Text == "Decimal")
-                    {
-                        sistema = Numeracion.Esistema.Decimal;
+                setResultado();
 
-                    }
-                    else
-                    {
-                        sistema = Numeracion.Esistema.Binario;
-                    }
-
-                }
             }
-            //setResultado();
         }
 
         private void rdbBinario_CheckedChanged(object sender, EventArgs e)
         {
-            foreach (Control control in cmbOperacion.Controls)
-            {
-                if (control is RadioButton && ((RadioButton)control).Checked)
-                {
-                    if (control.Text == "Decimal")
-                    {
-                        sistema = Numeracion.Esistema.Decimal;
+            //foreach (Control control in cmbOperacion.Controls)
+            //{
+             //   if (control is RadioButton && ((RadioButton)control).Checked)
+             //   {
+             //       if (control.Text == "Decimal")
+             //       {
+             //           sistema = Numeracion.Esistema.Decimal;
+             //
+              //      }
+             //       else
+              //      {
+              //          sistema = Numeracion.Esistema.Binario;
+              //      }
 
-                    }
-                    else
-                    {
-                        sistema = Numeracion.Esistema.Binario;
-                    }
-
-                }
-            }
+              //  }
+           // }
         //    setResultado();
         }
     }
