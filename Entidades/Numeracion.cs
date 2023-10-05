@@ -37,6 +37,11 @@ namespace Entidades
             {
                 this.valorNumerico=BinarioADecimal(valor);
             }
+            else
+            {
+                sistema=Esistema.Decimal;
+                this.valorNumerico = int.Parse(valor);
+            }
         }
 
         private bool EsBinario(string valor)
@@ -61,15 +66,15 @@ namespace Entidades
            
             if (sistema == Esistema.Binario)
             {
-                return BinarioADecimal(Valor).ToString();
+                return DecimalABinario(Valor);
             }
             else
             {
-                return DecimalABinario(Valor);
+                return BinarioADecimal(Valor).ToString();
             }
         }
 
-        public double BinarioADecimal(string valor)
+        private double BinarioADecimal(string valor)
         {
             if (EsBinario(valor))
             {
@@ -95,12 +100,24 @@ namespace Entidades
             }
         }
 
-        public string DecimalABinario(string valor)
+        private string DecimalABinario(string valor)
         {
             //convertir de decimal a binario y retornarlo como string
-            return "0" ;
+            string numeroBinario=string.Empty;
+            int numero=int.Parse(valor);
+            int resto;
+            int resultadoDiv=numero;
+            do
+            {
+                resto = resultadoDiv % 2;
+                resultadoDiv = resultadoDiv / 2;
+                numeroBinario=resto.ToString()+numeroBinario;
+
+            } while (resultadoDiv > 0);
+
+            return numeroBinario ;
         }
-        public string DecimalABinario(int valor)
+        private string DecimalABinario(int valor)
         {
             return "0";
         }
@@ -112,6 +129,24 @@ namespace Entidades
              return nuevoNum;
         }
 
+        public static Numeracion operator -(Numeracion n1, Numeracion n2)
+        {
+            double resultado = n1.valorNumerico - n2.valorNumerico;
+            Numeracion nuevoNum = new Numeracion(Esistema.Decimal, resultado);
+            return nuevoNum;
+        }
 
+        public static Numeracion operator /(Numeracion n1, Numeracion n2)
+        {
+            double resultado = n1.valorNumerico / n2.valorNumerico;
+            Numeracion nuevoNum = new Numeracion(Esistema.Decimal, resultado);
+            return nuevoNum;
+        }
+        public static Numeracion operator *(Numeracion n1, Numeracion n2)
+        {
+            double resultado = n1.valorNumerico * n2.valorNumerico;
+            Numeracion nuevoNum = new Numeracion(Esistema.Decimal, resultado);
+            return nuevoNum;
+        }
     }
 }

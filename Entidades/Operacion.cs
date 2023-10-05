@@ -28,8 +28,27 @@ namespace Entidades
         }
 
         public Numeracion Operar(char operador)
-        {
-            return PrimerOperando + SegundoOperando;
+        {   
+            switch (operador)
+            {
+                case '+':
+                    return primerOperando + segundoOperando;
+                    break;
+                case '-':
+                    return primerOperando - segundoOperando;
+                    break;
+                case '/':
+                    return primerOperando / segundoOperando;
+                    break;
+                case '*':
+                    return primerOperando * segundoOperando;
+                    break;
+                default: return primerOperando+segundoOperando;
+
+
+
+            }
+             ;
         }
     }
 }
