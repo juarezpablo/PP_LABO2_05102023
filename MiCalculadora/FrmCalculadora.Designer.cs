@@ -83,7 +83,6 @@
             rdbDecimal.TabStop = true;
             rdbDecimal.Text = "Decimal";
             rdbDecimal.UseVisualStyleBackColor = true;
-            rdbDecimal.CheckedChanged += rdbDecimal_CheckedChanged;
             // 
             // label1
             // 
@@ -142,7 +141,6 @@
             txtPrimerOperador.Name = "txtPrimerOperador";
             txtPrimerOperador.Size = new Size(168, 29);
             txtPrimerOperador.TabIndex = 6;
-            txtPrimerOperador.TextChanged += txtPrimerOperador_TextChanged;
             // 
             // txtSegundoOperador
             // 
@@ -152,7 +150,6 @@
             txtSegundoOperador.Name = "txtSegundoOperador";
             txtSegundoOperador.Size = new Size(171, 29);
             txtSegundoOperador.TabIndex = 7;
-            txtSegundoOperador.TextChanged += txtSegundoOperador_TextChanged;
             // 
             // cmbOperacion
             // 
@@ -227,8 +224,12 @@
             Controls.Add(lblResultado);
             Controls.Add(label1);
             Controls.Add(groupBox1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(3, 2, 3, 2);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FrmCalculadora";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Calculadora Juarez Pablo";
             FormClosing += FrmCalculadora_FormClosing;
             Load += FrmCalculadora_Load;
