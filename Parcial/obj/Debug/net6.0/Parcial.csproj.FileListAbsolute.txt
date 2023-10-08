@@ -1,0 +1,15 @@
+C:\Users\VAIO}\source\repos\PP_LABO2_05102023\Parcial\bin\Debug\net6.0\Parcial.exe
+C:\Users\VAIO}\source\repos\PP_LABO2_05102023\Parcial\bin\Debug\net6.0\Parcial.deps.json
+C:\Users\VAIO}\source\repos\PP_LABO2_05102023\Parcial\bin\Debug\net6.0\Parcial.runtimeconfig.json
+C:\Users\VAIO}\source\repos\PP_LABO2_05102023\Parcial\bin\Debug\net6.0\Parcial.dll
+C:\Users\VAIO}\source\repos\PP_LABO2_05102023\Parcial\bin\Debug\net6.0\Parcial.pdb
+C:\Users\VAIO}\source\repos\PP_LABO2_05102023\Parcial\obj\Debug\net6.0\Parcial.csproj.AssemblyReference.cache
+C:\Users\VAIO}\source\repos\PP_LABO2_05102023\Parcial\obj\Debug\net6.0\Parcial.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\VAIO}\source\repos\PP_LABO2_05102023\Parcial\obj\Debug\net6.0\Parcial.AssemblyInfoInputs.cache
+C:\Users\VAIO}\source\repos\PP_LABO2_05102023\Parcial\obj\Debug\net6.0\Parcial.AssemblyInfo.cs
+C:\Users\VAIO}\source\repos\PP_LABO2_05102023\Parcial\obj\Debug\net6.0\Parcial.csproj.CoreCompileInputs.cache
+C:\Users\VAIO}\source\repos\PP_LABO2_05102023\Parcial\obj\Debug\net6.0\Parcial.dll
+C:\Users\VAIO}\source\repos\PP_LABO2_05102023\Parcial\obj\Debug\net6.0\refint\Parcial.dll
+C:\Users\VAIO}\source\repos\PP_LABO2_05102023\Parcial\obj\Debug\net6.0\Parcial.pdb
+C:\Users\VAIO}\source\repos\PP_LABO2_05102023\Parcial\obj\Debug\net6.0\Parcial.genruntimeconfig.cache
+C:\Users\VAIO}\source\repos\PP_LABO2_05102023\Parcial\obj\Debug\net6.0\ref\Parcial.dll

@@ -23,15 +23,15 @@ namespace Entidades
         }
    
 
-        public override Numeracion CambiarSistemaDeNumeracion(Esistema sistema)
+        public override Numeracion CambiarSistemaDeNumeracion(ESistema sistema)
         {
             switch(sistema)
             {
-                case Esistema.Binario:
-                    return DecimalABinario();
+                case ESistema.Binario:
+                    return this.DecimalABinario();
                     break;
-                case Esistema.Octal:
-                    return DecimalAOctal();
+                case ESistema.Octal:
+                    return this.DecimalAOctal();
                     break;
                 default:
                     return this;
@@ -42,12 +42,21 @@ namespace Entidades
         }
         protected override bool EsNumeracionValida(string valor)
         {
-            return true;
+            
+            return (base.EsNumeracionValida(valor) && this.EsSistemaDecimalValido(valor));
         }
 
         private bool  EsSistemaDecimalValido (string valor)
         {
-            return true;
+            double conversion;
+            if (double.TryParse(valor, out conversion)) 
+            { 
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         private SistemaBinario DecimalABinario()
@@ -69,7 +78,7 @@ namespace Entidades
                 SistemaBinario nuevoBinario = new SistemaBinario(numeroBinario);
                 return nuevoBinario;
             }
-            else { return null;   }
+            else { return new SistemaBinario(msgError);   }
 
         }
 
@@ -92,7 +101,7 @@ namespace Entidades
                 SistemaOctal nuevoOctal = new SistemaOctal(numeroOctal);
                 return nuevoOctal;
             }
-            else { return null; }
+            else { return new SistemaOctal(msgError); }
         }
     }
 }

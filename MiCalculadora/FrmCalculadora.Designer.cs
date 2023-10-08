@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            rdbOctal = new RadioButton();
             rdbBinario = new RadioButton();
             rdbDecimal = new RadioButton();
             label1 = new Label();
@@ -36,8 +37,8 @@
             lblPrimerOperador = new Label();
             lblOperacion = new Label();
             lblSegundoOperador = new Label();
-            txtPrimerOperador = new TextBox();
-            txtSegundoOperador = new TextBox();
+            txtPrimerOperando = new TextBox();
+            txtSegundoOperando = new TextBox();
             cmbOperacion = new ComboBox();
             btnOperar = new Button();
             btnCerrar = new Button();
@@ -48,16 +49,29 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(rdbOctal);
             groupBox1.Controls.Add(rdbBinario);
             groupBox1.Controls.Add(rdbDecimal);
             groupBox1.Location = new Point(186, 104);
             groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(3, 2, 3, 2);
-            groupBox1.Size = new Size(311, 94);
+            groupBox1.Size = new Size(390, 94);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Representar resultado en:";
+            // 
+            // rdbOctal
+            // 
+            rdbOctal.AutoSize = true;
+            rdbOctal.Location = new Point(292, 41);
+            rdbOctal.Name = "rdbOctal";
+            rdbOctal.Size = new Size(53, 19);
+            rdbOctal.TabIndex = 2;
+            rdbOctal.TabStop = true;
+            rdbOctal.Text = "Octal";
+            rdbOctal.UseVisualStyleBackColor = true;
+            rdbOctal.CheckedChanged += rdbOctal_CheckedChanged;
             // 
             // rdbBinario
             // 
@@ -83,6 +97,7 @@
             rdbDecimal.TabStop = true;
             rdbDecimal.Text = "Decimal";
             rdbDecimal.UseVisualStyleBackColor = true;
+            rdbDecimal.CheckedChanged += rdbDecimal_CheckedChanged;
             // 
             // label1
             // 
@@ -133,23 +148,23 @@
             lblSegundoOperador.TabIndex = 5;
             lblSegundoOperador.Text = "Segundo Operador:";
             // 
-            // txtPrimerOperador
+            // txtPrimerOperando
             // 
-            txtPrimerOperador.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtPrimerOperador.Location = new Point(90, 239);
-            txtPrimerOperador.Margin = new Padding(3, 2, 3, 2);
-            txtPrimerOperador.Name = "txtPrimerOperador";
-            txtPrimerOperador.Size = new Size(168, 29);
-            txtPrimerOperador.TabIndex = 6;
+            txtPrimerOperando.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtPrimerOperando.Location = new Point(90, 239);
+            txtPrimerOperando.Margin = new Padding(3, 2, 3, 2);
+            txtPrimerOperando.Name = "txtPrimerOperando";
+            txtPrimerOperando.Size = new Size(168, 29);
+            txtPrimerOperando.TabIndex = 6;
             // 
-            // txtSegundoOperador
+            // txtSegundoOperando
             // 
-            txtSegundoOperador.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtSegundoOperador.Location = new Point(439, 239);
-            txtSegundoOperador.Margin = new Padding(3, 2, 3, 2);
-            txtSegundoOperador.Name = "txtSegundoOperador";
-            txtSegundoOperador.Size = new Size(171, 29);
-            txtSegundoOperador.TabIndex = 7;
+            txtSegundoOperando.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtSegundoOperando.Location = new Point(439, 239);
+            txtSegundoOperando.Margin = new Padding(3, 2, 3, 2);
+            txtSegundoOperando.Name = "txtSegundoOperando";
+            txtSegundoOperando.Size = new Size(171, 29);
+            txtSegundoOperando.TabIndex = 7;
             // 
             // cmbOperacion
             // 
@@ -184,6 +199,7 @@
             btnCerrar.TabIndex = 10;
             btnCerrar.Text = "Cerrar";
             btnCerrar.UseVisualStyleBackColor = true;
+            btnCerrar.Click += btnCerrar_Click;
             // 
             // btnLimpiar
             // 
@@ -196,6 +212,7 @@
             btnLimpiar.TabIndex = 11;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // listBox1
             // 
@@ -216,8 +233,8 @@
             Controls.Add(btnCerrar);
             Controls.Add(btnOperar);
             Controls.Add(cmbOperacion);
-            Controls.Add(txtSegundoOperador);
-            Controls.Add(txtPrimerOperador);
+            Controls.Add(txtSegundoOperando);
+            Controls.Add(txtPrimerOperando);
             Controls.Add(lblSegundoOperador);
             Controls.Add(lblOperacion);
             Controls.Add(lblPrimerOperador);
@@ -249,12 +266,13 @@
         private Label lblPrimerOperador;
         private Label lblOperacion;
         private Label lblSegundoOperador;
-        private TextBox txtPrimerOperador;
-        private TextBox txtSegundoOperador;
+        private TextBox txtPrimerOperando;
+        private TextBox txtSegundoOperando;
         private ComboBox cmbOperacion;
         private Button btnOperar;
         private Button btnCerrar;
         private Button btnLimpiar;
         private ListBox listBox1;
+        private RadioButton rdbOctal;
     }
 }

@@ -1,16 +1,15 @@
 ﻿using System.Runtime.CompilerServices;
-
-
+using System.Text.RegularExpressions;
 
 namespace Entidades
     
 {
-    public enum Esistema { Decimal, Binario, Octal};
+    public enum ESistema { Decimal, Binario, Octal};
     public abstract class Numeracion
     {
-        static protected string msgError;
+        protected static string msgError="Numero Invalido";
         protected string valor;
-
+       
 
         public string Valor
         {
@@ -38,54 +37,47 @@ namespace Entidades
 
         private void InicializaValor(string valor)
         {
-            this.valor = valor;
+            if (this.EsNumeracionValida(valor))
+            {
+                this.valor = valor;
+            }
+            else
+            {
+                this.valor = msgError;
+            }
         }
 
  
         
 
-        public abstract Numeracion CambiarSistemaDeNumeracion(Esistema sistema);
+        public abstract Numeracion CambiarSistemaDeNumeracion(ESistema sistema);
         protected virtual bool EsNumeracionValida(string valor)
         {
-            return false;
+            bool retorno = Regex.IsMatch(valor, "[a-zA-Z]|\\s");
+
+            return retorno;
         }
        
 
-        private string DecimalABinario(string valor)
+        public static bool operator  ==(Numeracion n1, Numeracion n2)
         {
-            //convertir de decimal a binario y retornarlo como string
-            string numeroBinario=string.Empty;
-            int numero=int.Parse(valor);
-            int resto;
-            int resultadoDiv=numero;
-            do
+            if((n1.GetType == n2.GetType)&& (n1.EsNumeracionValida(n1.Valor)&& n2.EsNumeracionValida(n2.Valor)))
             {
-                resto = resultadoDiv % 2;
-                resultadoDiv = resultadoDiv / 2;
-                numeroBinario=resto.ToString()+numeroBinario;
-
-            } while (resultadoDiv > 0);
-
-            return numeroBinario ;
+                return true;
+            }
+            else { return false; }
         }
-        
+        public static bool operator !=(Numeracion n1, Numeracion n2)
+        {
+            if ((n1.GetType == n2.GetType) && (n1.EsNumeracionValida(n1.Valor) && n2.EsNumeracionValida(n2.Valor)))
+            {
+                return false;
+            }
+            else { return true; }
+        }
 
-       
-      //  public static bool operator ==(Numeracion n1, Numeracion n2)
-      //  {
-      //      return n1.sistema == n2.sistema;
-      //  }
-      //  public static bool operator !=(Numeracion n1, Numeracion n2)
-      //  {
-      //      return !(n1== n2);
-      //  }
-      //  public static bool operator ==( Esistema sistema, Numeracion n1)
-      //  {
-      //      return n1.Sistema==sistema;
-      //  }
-      //  public static bool operator!=(Esistema sistema, Numeracion n1)
-      //  {
-      //      return !(n1.Sistema == sistema);
-      //  }
+
+
+        
     }
 }

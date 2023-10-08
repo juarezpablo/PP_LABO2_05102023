@@ -23,7 +23,7 @@ namespace Entidades
         {
             return new SistemaDecimal(ValorNumerico.ToString());
         }
-        public override Numeracion CambiarSistemaDeNumeracion(Esistema sistema)
+        public override Numeracion CambiarSistemaDeNumeracion(ESistema sistema)
         {
             return null;
         }
